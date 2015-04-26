@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+ <style type="text/css">
+
+
+/*----- Tabs -----*/
+.tabs {
+    width:100%;
+    display:inline-block;
+}
+ 
+    /*----- Tab Links -----*/
+    /* Clearfix */
+    .tab-links:after {
+        display:block;
+        clear:both;
+        content:'';
+    }
+ 
+    .tab-links li {
+        margin:0px 5px;
+        float:left;
+        list-style:none;
+    }
+ 
+        .tab-links a {
+            padding:9px 15px;
+            display:inline-block;
+            border-radius:10px 10px 0px 0px;
+            /*background:#7FB5DA;*/
+            font-size:16px;
+            font-weight:600;
+            color:#4c4c4c;
+            transition:all linear 0.15s;
+        }
+ 
+        .tab-links a:hover {
+            background:#a7cce5;
+            text-decoration:none;
+        }
+ 
+    li.active a, li.active a:hover {
+        background:#fff;
+        color:#4c4c4c;
+        background:#7FB5DA;
+    }
+ 
+    /*----- Content of Tabs -----*/
+    .tab-content {
+        padding:15px;
+        border-radius:3px;
+        /*box-shadow:-1px 1px 1px rgba(0,0,0,0.15);*/
+        background:#fff;
+    }
+ 
+        .tab {
+            display:none;
+        }
+ 
+        .tab.active {
+            display:block;
+        }
+
+
+
+
+inputs:-webkit-input-placeholder {
+    color: #b5b5b5;
+  
+    text-align: right;
+}
+
+inputs-moz-placeholder {
+    color: #b5b5b5;
+    
+    margin-left: 100px;
+}
+
+.inputs {
+    background: #f5f5f5;
+    font-size: 1.3rem;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    padding: 13px 10px;
+    width: 250px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 2px 3px rgba( 0, 0, 0, 0.1 );
+    clear: both;
+    margin-left: 800px;
+}
+
+.inputs:focus {
+    background: #fff;
+    box-shadow: 0 0 0 3px #fff38e, inset 0 2px 3px rgba( 0, 0, 0, 0.2 ), 0px 5px 5px rgba( 0, 0, 0, 0.15 );
+    outline: none;
+
+
+}
+
+
+
+</style>
+ <!--TABS -->
+
+ <script type="text/rocketscript" data-rocketsrc="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/rocketscript" data-rocketsrc="tabs.js"></script>
+<script src="jquery-1.11.2.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+jQuery(document).ready(function() {
+    jQuery('.tabs .tab-links a').on('click', function(e)  {
+        var currentAttrValue = jQuery(this).attr('href');
+        // Show/Hide Tabs
+        jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
+ 
+        // Change/remove current tab to active
+        jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+ 
+        e.preventDefault();
+    });
+});
+</script>
+
+
+ <script>
+  $(function() {
+    $( "#tabs" ).tabs();
+  });
+  </script>
+
+
+    <title>ADMIN Dashboard for HM</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+     <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li style="color:white;"><a href="index.html"></a></li>
+            <li style="color:white;"><a href="#">Settings</a></li>
+            <li style="color:white;"><a href="#">Profile</a></li>
+            <li style="color:white;"><a href="#">Help</a></li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <!--<li class="active"><img src="IMG_20140720_173513.jpg" height="150px" width="150px"></li>-->
+   
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="patient.html">Patient</a></li>
+      <li class="divider"></li>
+      <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bed Ward <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="bed1.html">Manage Bed </a></li>
+                  <li><a href="bed2.html">Bed Allotment</a></li>
+                </ul>
+              </li>
+            <li class="divider"></li>
+          </ul>
+      
+          <ul class="nav nav-sidebar">
+      <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blood Bank <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="blood1.html">Manage  </a></li>
+                  <li><a href="blood2.html">Donor</a></li>
+                </ul>
+              </li>
+              <li class="divider"></li>
+          </ul>
+     
+      <ul class="nav nav-sidebar">
+      <li><a href="report.html">Report</a></li>
+            
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Manage patient</h1>
+
+          <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+             <!-- <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Patient</h4>
+              <span class="text-muted">Patient Details</span>-->
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+             <!-- <img data-src="holder.js/Bed Ward/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Bed Ward</h4>
+              <span class="text-muted">Bed Ward Details</span>-->
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <!--<img data-src="holder.js/Blood Bank/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Blood Bank</h4>
+              <span class="text-muted">Blood Bank Details</span>-->
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <!--<img data-src="holder.js/Report/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Report</h4>
+              <span class="text-muted">Report Here</span>-->
+            </div>
+          </div>
+
+
+<input type="search"class="inputs" placeholder="Search"  />
+<div class="tabs">
+    <ul class="tab-links">
+        <li class="active"><a href="#tab1">Operation</a></li>
+        <li><a href="#tab2">Birth</a></li>
+        <li><a href="#tab3">Death</a></li>
+        <li><a href="#tab4">Other</a></li>
+        <li><a href="#tab5">Add Report</a></li>
+      
+
+    </ul>
+ 
+    <div class="tab-content">
+        <div id="tab1" class="tab active">
+           <div class="table-responsive" id="list">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Patient name</th>
+                  <th>Doctor</th>
+                  <th>Description</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>rahul</td>
+                  <td>A</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>rahul</td>
+                  <td>A</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                <tr>
+                <td>3</td>
+                  <td>rahul</td>
+                  <td>A</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>rahul</td>
+                  <td>A</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>rahul</td>
+                  <td>A</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>rahul</td>
+                  <td>A</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                
+              </tbody>
+            </table>
+
+<!-- next table -->
+
+<div id="tab2" class="tab">
+           <div class="table-responsive" id="list">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Patient name</th>
+                  <th>Doctor</th>
+                  <th>Description</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>awqd</td>
+                  <td>saf</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>knfl</td>
+                  <td>wfnw</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                <tr>
+                <td>3</td>
+                  <td>wlkeflw</td>
+                  <td>kjf</td>
+                  <td>oik </td>
+                  <td>02-02-1996</td>
+                </tr>
+                
+                
+              </tbody>
+            </table>
+<!-- table 3  -->
+
+<div id="tab3" class="tab">
+           <div class="table-responsive" id="list">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Patient name</th>
+                  <th>Doctor</th>
+                  <th>Description</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>rahul</td>
+                  <td>A</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>rahul</td>
+                  <td>A</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                <tr>
+                <td>3</td>
+                  <td>rahul</td>
+                  <td>A</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>rahul</td>
+                  <td>A</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>rahul</td>
+                  <td>A</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>rahul</td>
+                  <td>A</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                
+              </tbody>
+            </table>
+<!-- table 4 -->
+<div id="tab4" class="tab">
+           <div class="table-responsive" id="list">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Patient name</th>
+                  <th>Doctor</th>
+                  <th>Description</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>rahul</td>
+                  <td>A</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>rahul</td>
+                  <td>A</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                <tr>
+                <td>3</td>
+                  <td>rahul</td>
+                  <td>A</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>rahul</td>
+                  <td>A</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>rahul</td>
+                  <td>A</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>rahul</td>
+                  <td>A</td>
+                  <td>bqw</td>
+                  <td>02-02-1996</td>
+                </tr>
+                
+              </tbody>
+            </table>
+
+
+<label align="right">Show <div class="selector" style="width: 74px; margin-left:900px; "><span style="width: 49px; -webkit-user-select: none;"></span><select size="1" name="DataTables_Table_0_length" aria-controls="DataTables_Table_0"><option value="10" selected="selected">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></div></label>
+          </div>
+
+        </div>
+ 
+        <div id="tab5" class="tab">
+           <div class="tab-pane box" id="add_pat" style="padding: 5px">
+
+                <div class="box-content">
+
+                    <form action="" method="post" accept-charset="utf-8" class="form-horizontal validatable"><div style="display:none">
+
+<input type="hidden" name="authenticity_token" value="e4955140caeeefda74c6712d3a047cd0" />
+
+</div>                        <div class="padded">
+
+                            <!--<div class="control-group">
+
+                                <label class="control-label">Name</label>
+
+                                <div class="controls">
+
+                                    <input type="text" class="validate[required]" name="name"/>
+
+                                </div>
+
+                            </div>
+
+                            <div class="control-group">
+
+                                <label class="control-label">Email</label>
+
+                                <div class="controls">
+
+                                    <input type="text" class="validate[required]" name="email"/>
+
+                                </div>
+
+                            </div>
+
+                            <div class="control-group">
+
+                                <label class="control-label">Password</label>
+
+                                <div class="controls">
+
+                                    <input type="password" class="validate[required]" name="password"/>
+
+                                </div>
+
+                            </div>
+
+                            <div class="control-group">
+
+                                <label class="control-label">Address</label>
+
+                                <div class="controls">
+
+                                    <input type="text" class="" name="address"/>
+
+                                </div>
+
+                            </div>
+
+                            <div class="control-group">
+
+                                <label class="control-label">Phone</label>
+
+                                <div class="controls">
+
+                                    <input type="text" class="" name="phone"/>
+
+                                </div>
+
+                            </div>
+
+                            <div class="control-group">
+
+                                <label class="control-label">Sex</label>
+
+                                <div class="controls">
+
+                                    <select name="sex" class="uniform" style="width:7%;">
+
+                                        <option value="male">Male</option>
+
+                                        <option value="female">Female</option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                            <div class="control-group">
+
+                                <label class="control-label">Birth Date</label>
+
+                                <div class="controls">
+
+                                    <input type="text"  class="datepicker fill-up" name="birth_date"/>
+
+                                </div>
+
+                            </div>
+
+                            <div class="control-group">
+
+                                <label class="control-label">Age</label>
+
+                                <div class="controls">
+
+                                    <input type="text" class="" name="age"/>
+
+                                </div>
+
+                            </div>-->
+
+                            <div class="control-group">
+
+                                <label class="control-label">Type</label>
+
+                                <div class="controls">
+
+                                    <select name="blood_group" class="uniform" style="width:10%;">
+
+                                        <option value="A+">Operation</option>
+
+                                        <option value="A-">Birth</option>
+
+                                        <option value="B+">Death</option>
+
+                                        <option value="B-">Other</option>
+
+                                        
+
+                                    </select>
+
+
+
+                                </div>
+
+                            </div>
+
+                            <label>Description</label><br><input type="text" class="" name=""/><br>
+                            <label>Doctor</label><br><select name="blood_group" class="uniform" style="width:5%;">
+
+                                        <option value="A+">A</option>
+
+                                        <option value="A-">B</option>
+
+                                        <option value="B+">D</option>
+
+                                        <option value="B-">O</option>
+
+                                        
+
+                                    </select><br>
+
+                                    <label>Patient</label><br><select name="blood_group" class="uniform" style="width:5%;">
+
+                                        <option value="A+">X</option>
+
+                                        <option value="A-">Y</option>
+
+                                        <option value="B+">Z</option>
+                                        <option value="B-">P</option>
+
+                                        
+
+                                    </select><br>
+
+                                    <label>Date</label><br><input type="date">
+<br>
+                        </div>
+
+                        <div class="form-actions">
+                          <br>
+                          <br>
+                          
+                            <button type="submit" class="btn btn-blue">Add Report</button>
+
+                        </div>
+
+                    </form>                
+
+                </div>                
+
+            </div>
+
+
+        </div>
+ 
+    </div>
+</div>
+
+
+        
+        </div>
+
+
+      </div>
+    
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

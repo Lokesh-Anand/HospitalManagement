@@ -1,0 +1,272 @@
+/******************************************************************
+*******************************************************************
+
+	Description: Tutorial CSS
+	Author: ninetofive.me
+	Author URI: http://www.ninetofive.me
+	Version: 1.0
+	
+	Designed & Handcrafted by Zan from ninetofive.me
+	
+*******************************************************************
+******************************************************************/
+
+
+/******************************************************************
+This is the CSS Reset
+******************************************************************/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+	outline: none;
+	text-decoration: none;
+}
+/******************************************************************
+Print Styles
+******************************************************************/
+
+@media print {
+* {
+	background: transparent !important;
+	color: black !important;
+	text-shadow: none !important;
+	filter:none !important;
+	-ms-filter: none !important;
+}
+a, a:visited {
+	text-decoration: underline;
+}
+a[href]:after {
+	content: " (" attr(href) ")";
+}
+abbr[title]:after {
+	content: " (" attr(title) ")";
+}
+ .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+content: "";
+}
+pre, blockquote {
+	border: 1px solid #999;
+	page-break-inside: avoid;
+}
+thead {
+	display: table-header-group;
+}
+tr, img {
+	page-break-inside: avoid;
+}
+img {
+	max-width: 100% !important;
+}
+ @page {
+margin: 0.5cm;
+}
+p, h2, h3 {
+	orphans: 3;
+	widows: 3;
+}
+h2, h3 {
+	page-break-after: avoid;
+}
+}
+
+/******************************************************************
+Text Selection Styles
+******************************************************************/
+
+/* Safari, Chrome, iPhones, iPads */
+::selection {
+	background:#4096ee;
+	color:#fff;
+}
+
+::-moz-selection {
+	background:#4096ee;
+	color:#fff;
+}
+
+::-webkit-selection {
+	background:#4096ee;
+	color:#fff;
+}
+/******************************************************************
+General CSS
+******************************************************************/
+p {
+	font-family: Verdana, Arial, sans-serif;
+	line-height: 1.6em;
+	color: #616161;
+	font-size: 10px;
+}
+h1 {
+	font-family: 'PT Sans', Verdana, Arial, sans-serif;
+	font-weight: bold;
+	line-height: 1.6em;
+	color: #616161;
+	text-decoration: none;
+	font-size: 20px;
+}
+h2 {
+	font-family: 'PT Sans', Verdana, Arial, sans-serif;
+	line-height: 1.6em;
+	color: #616161;
+	text-decoration: none;
+	font-size: 16px
+}
+h3 {
+	font-family: 'PT Sans', Verdana, Arial, sans-serif;
+	line-height: 1.6em;
+	color: #616161;
+	text-decoration: none;
+	font-size: 14px;
+}
+h4 {
+	font-family: 'PT Sans', Verdana, Arial, sans-serif;
+	line-height: 1.6em;
+	color: #616161;
+	text-decoration: none;
+	font-size: 12px;
+}
+h5 {
+	font-family: 'PT Sans', Verdana, Arial, sans-serif;
+	line-height: 1.6em;
+	color: #ababab;
+	text-decoration: none;
+	font-size: 10px;
+}
+h6 {
+	font-family: 'PT Sans', Verdana, Arial, sans-serif;
+	line-height: 1.6em;
+	color: #ababab;
+	text-decoration: none;
+	font-size: 8px;
+}
+/******************************************************************
+Main CSS
+******************************************************************/
+div#main {
+	width: 360px;
+	margin: 200px auto 20px auto;
+}
+.title {
+	line-height: 1.2em;
+	position: relative;
+	margin-left: 40px;
+}
+div.icon {
+	margin-top: 4px;
+	float: left;
+	width: 31px;
+	height: 30px;
+	background-image: url(../images/magnify.gif);
+	background-repeat: no-repeat;
+	-webkit-transition-property: background-position, color;
+	-webkit-transition-duration: .2s, .1s;
+	-webkit-transition-timing-function: linear, linear;
+	-moz-transition-property: background-position, color;
+	-moz-transition-duration: .2s, .1s;
+	-ms-transition-duration: .2s, .1s;
+	-ms-transition-timing-property: linear, linear;
+	-o-transition-property: background-position, color;
+	-o-transition-duration: .2s, .1s;
+	-o-transition-timing-property: linear, linear;
+	transition-property: background-position, color;
+	transition-duration: .2s, .1s;
+	transition-timing-property: linear, linear;
+}
+div.icon:hover {
+	background-position: 0px -30px;
+	cursor: pointer;
+}
+input#search {
+	width: 350px;
+	height: 25px;
+	padding: 5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	outline: none;
+	border: 1px solid #ababab;
+	font-size: 20px;
+	line-height: 25px;
+	color: #ababab;
+}
+input#search:hover, input#search:focus {
+	color: #3b3b3b;
+	border: 1px solid #36a2d2;
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 1);
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 1);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 1);
+}
+h4#results-text {
+	display: none;
+}
+ul#results {
+	display: none;
+	width: 360px;
+	margin-top: 4px;
+	border: 1px solid #ababab;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-box-shadow: rgba(0, 0, 0, .15) 0 1px 3px;
+	-moz-box-shadow: rgba(0,0,0,.15) 0 1px 3px;
+	box-shadow: rgba(0, 0, 0, .15) 0 1px 3px;
+}
+ul#results li {
+	padding: 8px;
+	cursor: pointer;
+	border-top: 1px solid #cdcdcd;
+	transition: background-color .3s ease-in-out;
+	-moz-transition: background-color .3s ease-in-out;
+	-webkit-transition: background-color .3s ease-in-out;
+}
+ul#results li:hover {
+	background-color: #F7F7F7;
+}
+ul#results li:first-child {
+	border-top: none;
+}
+ul#results li h3, ul#results li h4 {
+	transition: color .3s ease-in-out;
+	-moz-transition: color .3s ease-in-out;
+	-webkit-transition: color .3s ease-in-out;
+	color: #616161;
+	line-height: 1.2em;
+}
+ul#results li:hover h3, ul#results li:hover h4  {
+	color: #3b3b3b;
+	font-weight: bold;
+}

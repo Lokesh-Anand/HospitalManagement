@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Quote rotator jQuery Demo</title>
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+
+<div class="main">
+<div id="cbp-qtrotator" class="cbp-qtrotator">
+<div class="cbp-qtcontent current"> <img src="yoga-icon.png" alt="" height="200" width="200" />
+<blockquote>
+<p>Get spiritual. A study conducted by the formidably sober and scientific Harvard University found that patients who were prayed for recovered quicker than those who weren’t, even if they weren’t aware of the prayer.</p>
+
+</blockquote>
+</div>
+<div class="cbp-qtcontent"> <img src="yoga-icon.png" alt="" height="200" width="200" />
+<blockquote>
+<p> Copy your kitty: Learn to do stretching exercises when you wake up. It boosts circulation and digestion, and eases back pain.</p>
+
+</blockquote>
+</div>
+<div class="cbp-qtcontent"> <img src="yoga-icon.png" alt="" height="200" width="200"/>
+<blockquote>
+<p> Don’t skip breakfast. Studies show that eating a proper breakfast is one of the most positive things you can do if you are trying to lose weight. Breakfast skippers tend to gain weight. A balanced breakfast includes fresh fruit or fruit juice, a high-fibre breakfast cereal, low-fat milk or yoghurt, wholewheat toast, and a boiled egg.</p>
+
+</blockquote>
+</div>
+
+<div class="cbp-qtcontent"> <img src="yoga-icon.png" alt="" height="200" width="200"/>
+<blockquote>
+<p> Neurobics for your mind. Get your brain fizzing with energy. American researchers coined the term ‘neurobics’ for tasks which activate the brain's own biochemical pathways and to bring new pathways online that can help to strengthen or preserve brain circuits. </p>
+
+</blockquote>
+</div>
+
+<div class="cbp-qtcontent"> <img src="yoga-icon.png" alt="" height="200" width="200"/>
+<blockquote>
+<p> Bone up daily. Get your daily calcium by popping a tab, chugging milk or eating yoghurt. It’ll keep your bones strong. Remember that your bone density declines after the age of 30. You need at least 200 milligrams daily, which you should combine with magnesium, or it simply won’t be absorbed. </p>
+
+</blockquote>
+</div>
+
+<div class="cbp-qtcontent"> <img src="yoga-icon.png" alt="" height="200" width="200"/>
+<blockquote>
+<p> Load up on vitamin C.We need at least 90 mg of vitamin C per day and the best way to get this is by eating at least five servings of fresh fruit and vegetables every day. So hit the oranges and guavas!</p>
+
+</blockquote>
+</div>
+
+<div class="cbp-qtcontent"> <img src="yoga-icon.png" alt="" height="200" width="200"/>
+<blockquote>
+<p> Pure water. Don’t have soft drinks or energy drinks while you're exercising. Stay properly hydrated by drinking enough water during your workout (just don't overdo things, as drinking too much water can also be dangerous). 
+
+While you might need energy drinks for long-distance running, in shorter exercise sessions in the gym, your body will burn the glucose from the soft drink first, before starting to burn body fat. Same goes for eating sweets.</p>
+
+</blockquote>
+</div>
+
+<div class="cbp-qtcontent"> <img src="yoga-icon.png" alt="" height="200" width="200"/>
+<blockquote>
+<p> Burn fat during intervals. To improve your fitness quickly and lose weight, harness the joys of interval training. Set the treadmill or step machine on the interval programme, where your speed and workload varies from minute to minute. Build up gradually, every minute and return to the starting speed. Repeat this routine. Not only will it be less monotonous, but you can train for a shorter time and achieve greater results.</p>
+
+</blockquote>
+</div>
+
+
+
+<span class="cbp-qtprogress"></span> </div>
+</div>
+<!-- / main --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+<script type="text/javascript">
+		$(document).ready(function() {
+			//Quotes rotator
+			var divs = $('.cbp-qtcontent');
+			
+			function fade() {
+				var current = $('.current');
+				var currentIndex = divs.index(current),
+					nextIndex = currentIndex + 1;
+				
+				if (nextIndex >= divs.length) {
+					nextIndex = 0;
+				}
+				
+				var next = divs.eq(nextIndex);
+				
+				next.stop().fadeIn(1500, function() {
+					$(this).addClass('current');
+				});
+				
+				current.stop().fadeOut(1500, function() {
+					$(this).removeClass('current');
+					_startProgress()
+					setTimeout(fade, 8000);
+				});
+			}
+			
+			function _startProgress(){
+				$(".cbp-qtprogress").removeAttr('style');
+				$(".cbp-qtprogress").animate({
+					width:"800px",
+				} , 8000);
+			}
+			
+			_startProgress()
+			setTimeout(fade, 8000);
+		});
+	</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

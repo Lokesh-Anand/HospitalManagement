@@ -1,0 +1,62 @@
+@font-face {
+font-family: 'fontawesome';
+src: url('../fonts/fontawesome.eot');
+src: url('../fonts/fontawesome.eot?#iefix') format('embedded-opentype'),  url('../fonts/fontawesome.svg#fontawesome') format('svg'),  url('../fonts/fontawesome.woff') format('woff'),  url('../fonts/fontawesome.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+body {
+font-family: 'Lato', Calibri, Arial, sans-serif;
+color: #47a3da
+}
+.main {
+width: 600px;
+margin: 100px auto
+}
+.cbp-qtrotator {
+width: 600px;
+height: 180px;
+position: relative;
+float: left;
+margin: 0;
+padding-top: 11px
+}
+.cbp-qtcontent {
+width: 100%;
+height: auto;
+position: absolute;
+min-height: 180px;
+top: 0;
+z-index: 2;
+display: none
+}
+.cbp-qtrotator .cbp-qtcontent.current {
+display: block
+}
+.cbp-qtrotator blockquote {
+margin: 40px 0 0 0;
+padding: 0
+}
+.cbp-qtrotator blockquote p {
+font-size: 1.2em;
+color: #888;
+font-weight: 300;
+margin: 0.4em 0 1em
+}
+.cbp-qtrotator blockquote footer {
+font-size: 1.2em
+}
+.cbp-qtrotator blockquote footer:before {
+content: '― '
+}
+.cbp-qtrotator .cbp-qtcontent img {
+float: right;
+margin: 50px 0 0 50px
+}
+.cbp-qtprogress {
+position: absolute;
+background: #47a3da;
+height: 1px;
+width: 0%;
+z-index: 1000
+}

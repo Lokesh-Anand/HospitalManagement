@@ -1,0 +1,31 @@
+ALTER TABLE consultation ADD appointment_date date;
+
+
+INSERT INTO patient(patient_id,p_name, age, phno, address)VALUES(5009,"Sukoon sharma",21,"8892197645","Bangalore");
+INSERT INTO patient(patient_id,p_name, age, phno, address)VALUES(5010,"Sanchit Singhania",21,"8892197645","Bangalore");
+INSERT INTO patient(patient_id,p_name, age, phno, address)VALUES(5011,"Saket More",21,"8892197645","Bangalore");
+INSERT INTO patient(patient_id,p_name, age, phno, address)VALUES(5012,"Samyak Jain",21,"8892197645","Bangalore");
+INSERT INTO patient(patient_id,p_name, age, phno, address)VALUES(5013,"Naman Garg",21,"8892197645","Bangalore");
+INSERT INTO patient(patient_id,p_name, age, phno, address)VALUES(5014,"Ankur kishore",21,"8892197645","Bangalore");
+INSERT INTO patient(patient_id,p_name, age, phno, address)VALUES(5015,"Anurag Patwary",21,"8892197645","Bangalore");
+INSERT INTO patient(patient_id,p_name, age, phno, address)VALUES(5016,"Himanshu Ranjan",21,"8892197645","Bangalore");
+INSERT INTO patient(patient_id,p_name, age, phno, address)VALUES(5017,"Akash Ratkal",21,"8892197645","Bangalore");
+INSERT INTO patient(patient_id,p_name, age, phno, address)VALUES(5018,"Meghdeep Ray",21,"8892197645","Bangalore");
+INSERT INTO patient(patient_id,p_name, age, phno, address)VALUES(5019,"Himanshu Shekhar",21,"8892197645","Bangalore");
+
+
+INSERT INTO consultation(doctor_id,patient_id, remarks, con_time, appointment_date)VALUES(3,5009,"fever","15:00:00","2015-04-12");
+INSERT INTO consultation(doctor_id,patient_id, remarks, con_time, appointment_date)VALUES(3,5010,"fever","15:15:00","2015-04-12");
+INSERT INTO consultation(doctor_id,patient_id, remarks, con_time, appointment_date)VALUES(3,5011,"fever","15:30:00","2015-04-12");
+INSERT INTO consultation(doctor_id,patient_id, remarks, con_time, appointment_date)VALUES(3,5012,"fever","15:45:00","2015-04-12");
+INSERT INTO consultation(doctor_id,patient_id, remarks, con_time, appointment_date)VALUES(3,5013,"fever","16:00:00","2015-04-12");
+INSERT INTO consultation(doctor_id,patient_id, remarks, con_time, appointment_date)VALUES(3,5014,"fever","16:15:00","2015-04-12");
+INSERT INTO consultation(doctor_id,patient_id, remarks, con_time, appointment_date)VALUES(3,5015,"fever","16:30:00","2015-04-12");
+INSERT INTO consultation(doctor_id,patient_id, remarks, con_time, appointment_date)VALUES(3,5016,"fever","16:45:00","2015-04-12");
+
+
+INSERT INTO consultation(doctor_id, patient_id, remarks, con_time,  appointment_date)VALUES(3,5017,"fever","00:00:00","2015-04-12");
+INSERT INTO consultation(doctor_id, patient_id, remarks, con_time,  appointment_date)VALUES(3,5018,"fever","00:00:00","2015-04-12");
+INSERT INTO consultation(doctor_id, patient_id, remarks, con_time,  appointment_date)VALUES(3,5019,"fever","00:00:00","2015-04-12");
+
+

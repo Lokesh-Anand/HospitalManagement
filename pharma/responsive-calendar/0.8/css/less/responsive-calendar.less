@@ -1,0 +1,80 @@
+@black: #000;
+@white: #fff;
+@blueBackground: #1d86c8;
+@baseFontSize: 14px;
+
+.responsive-calendar {
+  .controls {
+    text-align: center;
+
+    a {
+      cursor: pointer;
+    }
+
+    h4 {
+      display: inline;
+    }
+  }
+
+  .day-headers, .days {
+    font-size: 0;
+  }
+
+  .day {
+    display: inline-block;
+    position: relative;
+    font-size: @baseFontSize;
+    width: 100/7%;
+    text-align: center;
+
+    a {
+      color: @black;
+      display: block;
+      cursor: pointer;
+      padding: 20% 0 20% 0;
+
+      &:hover {
+        //.box-shadow( inset 0px 0px 0px 1px rgba(170, 170, 170, 1) );
+        background-color: #eee;
+        text-decoration: none;
+      }
+    }
+
+    &.header {
+      border-bottom: 1px gray solid;
+    }
+
+    &.active {
+      a {
+        background-color: @blueBackground;
+        color: @white;
+
+        &:hover {
+          background-color: lighten(@blueBackground, 10%);
+        }
+      }
+
+      .not-current {
+        background-color: lighten(@blueBackground, 30%);
+        color: @white;
+
+        &:hover {
+          background-color: lighten(@blueBackground, 40%);
+        }
+      }
+    }
+
+    &.not-current {
+      a {
+        color: #ddd;
+      }
+    }
+
+    .badge {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      z-index: 1;
+    }
+  }
+}

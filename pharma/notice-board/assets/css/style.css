@@ -1,0 +1,37 @@
+﻿
+
+/*==============================
+    GENERAL STYLES
+  ========================*/
+
+body {
+    background-color: #DFDFDF;
+    padding-top: 70px; /*Required FOR FIXED TOP NAVBAR*/
+}
+/*==============================
+    NOTICE BOARD STYLES
+  ========================*/
+.notice-board .panel {
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+}
+
+.notice-board ul {
+}
+
+.notice-board li {
+    padding: 10px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+    .notice-board li span {
+        margin-right: 10px;
+        border: 1px solid #DBDBDB;
+        padding: 5px;
+    }
+
+    .notice-board li a, li a:hover {
+        text-decoration: none;
+        color: #000;
+    }

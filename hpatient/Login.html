@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>HM Admin Dashboard</title>
+		<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="js/jquery.min.js"></script>
+		 <!-- Custom Theme files -->
+		<link href="css/style.css" rel='stylesheet' type='text/css' />
+   		 <!-- Custom Theme files -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> 
+			addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+			function hideURLbar()
+				{
+					window.scrollTo(0,1); 
+				}
+				
+		</script>
+		 <!---- start-smoth-scrolling---->
+		<!----webfonts--->
+		<link href="signin.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+		<!---//webfonts--->
+		<!----start-top-nav-script---->
+		<!----//End-top-nav-script---->
+	</head>
+	<body>
+		<!----- start-header---->
+			<div id="home" class="header">
+					<div class="top-header">
+						<div class="container">
+						<div class="logo">
+							<a href="#"><img src="images/logo.png" title="doctor" /></a>
+						</div>
+						<!----start-top-nav---->
+						 <nav class="top-nav">
+							<ul class="top-nav">
+								<li><a href="Main.html" class="scroll">Home </a></li>
+								<li><a href="#about" class="scroll">About us</a></li>
+								<li><a href="#services" class="scroll">our services</a></li>
+								<li><a href="#team" class="scroll">our team</a></li>
+								<li><a href="#contact" class="scroll">Contact</a></li>
+								<li class="active"><a href="Login.html" >LogIn</a></li>
+							</ul>
+							<a href="#" id="pull"><img src="images/menu-icon.png" title="menu" /></a>
+						</nav>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+			</div>
+		<!----- //End-header---->
+		<div class="container" >
+      <form class="form-signin" method="POST"  action="Doctor.html">
+        <h2 class="form-signin-heading">Please Sign In</h2>
+		<select id="drop" class="form-control">
+			<option>Account Type</option>
+			<option>Admin</option>
+			<option>Doctor</option>
+			<option>Patient</option>
+			<option>Nurse</option>
+			<option>Pharmacist</option>
+			<option>Laboratorist</option>
+			<option>Accountant</option>
+		</select>
+
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address"  >
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" >
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign in" ></input>
+      </form>
+
+    </div> <!-- /container -->
+	
+	<div class="mastfoot">
+        </div>
+	
+		
+	</body>
+	
+</html>
