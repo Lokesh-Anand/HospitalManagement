@@ -1,24 +1,24 @@
 <?php 
-
+	require("common.php");
     
-    require("common.php"); 
-     
-    
-    if(empty($_SESSION['user'])) 
+	if(empty($_SESSION['user'])) 
     { 
         
-        header("Location: index.php"); 
+        header("Location: login.php"); 
          
         
         
-        die("Redirecting to index.php"); 
+        die("Redirecting to login.php"); 
     } 
      
     
     
-    if(!empty($_POST)) 
-    { 
-        
+     
+    
+    //include("reset.php" );
+    
+    
+    if(!empty($_POST)){
         if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) 
         { 
             die("Invalid E-Mail Address"); 
@@ -138,28 +138,96 @@
         // Now that the user's E-Mail address has changed, the data stored in the $_SESSION 
         // array is stale; we need to update it so that it is accurate. 
         $_SESSION['user']['email'] = $_POST['email']; 
+        
+		//session_destroy();	
+        
+        header("Location: Admin.php"); 
          
-        // This redirects the user back to the members-only page after they register 
-        header("Location: private.php"); 
-         
         
         
         
-        die("Redirecting to private.php"); 
+        die("Redirecting to Admin.php"); 
     } 
      
 ?> 
-<h1>Edit Account</h1> 
-<form action="edit_account.php" method="post"> 
-    Username:<br /> 
-    <b><?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?></b> 
-    <br /><br /> 
-    E-Mail Address:<br /> 
-    <input type="text" name="email" value="<?php echo htmlentities($_SESSION['user']['email'], ENT_QUOTES, 'UTF-8'); ?>" /> 
-    <br /><br /> 
-    Password:<br /> 
-    <input type="password" name="password" value="" /><br /> 
-    <i>(leave blank if you do not want to change your password)</i> 
-    <br /><br /> 
-    <input type="submit" value="Update Account" /> 
-</form>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>Edit Account</title>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="assets1/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLE CSS -->
+    <link href="assets1/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link href="assets1/css/style.css" rel="stylesheet" />    
+    <!-- GOOGLE FONT -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+</head>
+<body>
+    <div class="container">
+        <div class="row text-center pad-top ">
+            <div class="col-md-12">
+                <h2>Edit Account</h2>
+            </div>
+        </div>
+         <div class="row  pad-top">
+               
+                <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                        <strong> Edit Account </strong>  
+                            </div>
+                            <div class="panel-body">
+                                <form role="form" action="edit_account.php" method="post">
+<br/>
+                                        <div class="form-group input-group">
+                                           
+                                            Username:<br /> 
+										<b><?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?></b> 
+										 
+                                        </div>
+                                     
+                                         <div class="form-group input-group">
+                                           <span class="input-group-addon">@</span> 
+                                            
+										<input type="text" name="email" class="form-control" value="<?php echo htmlentities($_SESSION['user']['email'], ENT_QUOTES, 'UTF-8'); ?>" /> 
+											
+                                        </div>
+                                      <div class="form-group input-group">
+                                            <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
+                                                <input type="password" name="password"  class="form-control" placeholder="Enter password" /><br /> 
+    
+											
+                                        </div>
+                                     
+                                     <input type="submit" class="btn btn-success " value="Update Account">
+                                    <hr />
+                                    
+                                    </form>
+                            </div>
+                           
+                        </div>
+                    </div>
+                
+                
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- CORE JQUERY  -->
+    <script src="assets1/plugins/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS  -->
+    <script src="assets1/plugins/bootstrap.js"></script>
+   
+</body>
+</html>
