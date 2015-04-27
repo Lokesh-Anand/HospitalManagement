@@ -93,7 +93,7 @@
 			if ($_POST['menu'] == 'Admin' && $row['role']=="admin")
 		    header("Location: admin/Admin.php"); 
              else if ($_POST['menu'] == 'Doctor' && $row['role']=="doctor")
-			 header("Location: Project/Doctor.php");
+			 header("Location: Doctor/Doctor.php");
 			 else if ($_POST['menu'] == 'Patient' && $row['role']=="patient")
 			 header("Location: hpatient/patient.php");
 			 else if ($_POST['menu'] == 'Nurse' && $row['role']=="nurse")

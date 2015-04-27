@@ -1,0 +1,21 @@
+1.Copy OpenSSL folder in the installation directory of wamp server.(C:\wamp\)
+
+2.Replace httpd.conf and openssl.cnf in "C:\wamp\bin\apache\apache2.4.9\conf\ with the httpd.conf and opensl.conf files given here.
+
+3.Replace httpd-ssl.conf in "C:\wamp\bin\apache\apache2.4.9\conf\extra with the httpd-ssl.conf file given here.
+
+4.Copy the site folder in wamp www directory.
+
+5.Create a new db test in phpmyadmin and import test.sql file in the test db(use the name of the db as test only)
+(this is for temporary purpose,i will integrate with the common db later)
+5.Hopefully if everything works,open your browser and go to www.hospital.dev
+
+6.However this is a self signed certificate so chrome wont trust this,so for first time proceed to site and then click 
+on small lock sign on the top of address page,click on that,then there is a link for certificate information.Click it
+then on details tab,then copy to file,then next,next..and give certificate some name and finish.
+
+7.Now you have to import the certificate in chrome,go in advanced settings->https/ssl->manage certificates
+then go to trusted root authorities and import the certificate there.
+
+8.Now chrome should trust the certificate so that next time you visit the website,it doesn't show a warning page.
+
